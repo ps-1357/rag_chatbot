@@ -16,11 +16,11 @@ from langchain_openai import OpenAIEmbeddings
 
 app = FastAPI()
 
-# Configure CORS
+# Configure CORS to allow all origins
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["http://localhost:3000"],  # Frontend URL
-    allow_credentials=True,
+    allow_origins=["*"],
+    allow_credentials=False,  
     allow_methods=["*"],
     allow_headers=["*"],
 )
@@ -32,7 +32,6 @@ def init_chat_engine():
         current_dir = os.path.dirname(os.path.abspath(__file__))
         db_dir = os.path.join(current_dir, "rag", "vectorstore")
         
-        # Load the existing vector store
         vector_store = Chroma(
             persist_directory=db_dir,
             embedding_function=OpenAIEmbeddings()

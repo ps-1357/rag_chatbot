@@ -1,0 +1,14 @@
+langchain
+langchain-community
+langchain-openai
+chromadb
+openai
+python-docx
+pypdf
+docx2txt
+fastapi
+uvicorn
+pydantic
+camelot-py[cv]
+opencv-python-headless
+ghostscript  

@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { API_URL } from "../lib/utils";
+import { API_URL } from "./lib/utils";
 import { ChatMessage } from "../components/ChatMessage";
 
 interface Message {
